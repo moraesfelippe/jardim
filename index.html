@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./src/styles/styles.css">
+    <link rel="stylesheet" href="/src/styles/styles.css">
    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
@@ -14,22 +14,45 @@
     <header>
         <nav id="navbar">
             <i class="fa-brands fa-pagelines" id="nav-logo"> Jardins</i>
-
+        
             <ul id="nav-list">
                 <li class="nav-item active">
-                    <a href="#home">Início</a>
+                    <button class="btn-default" onclick="window.location.href='#home'">Início</button>
                 </li>
                 <li class="nav-item">
-                    <a href="#serv">Servicos</a>
+                    <button class="btn-default" onclick="window.location.href='#Servicos'">Serviços</button>
                 </li>
                 <li class="nav-item">
-                    <a href="#client">Clientes</a>
+                    <button class="btn-default" onclick="window.location.href='#testimonials'">Clientes</button>
                 </li>
             </ul>
 
-            <button class="btn-default">
-                Peça aqui
+            <button class="btn-default" id="abrirFormulario">
+                Peça Aqui
             </button>
+        
+            <!-- Modal Formulário -->
+<div id="modalFormulario" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Entre em Contato</h2>
+        <form id="contatoForm">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" pattern="\(\d{2}\) \d{4,5}-\d{4}" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
             <button id="mobile-btn">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -38,18 +61,18 @@
         <div id="mobile-menu">
             <ul id="mobile-nav-list">
                 <li class="nav-item">
-                    <a href="#home">Início</a>
+                    <a href="#home" class="nav-button">Início</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#serv">Servicos</a>
+                    <a href="#Servicos" class="nav-button">Serviços</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#client">Clientes</a>
+                    <a href="#testimonials" class="nav-button">Clientes</a>
                 </li>
             </ul>
 
-            <button class="btn-default">
-                Peça aqui
+            <button class="btn-default" id="abrirFormularioMobile">
+                Peça Aqui
             </button>
 
         </div>
@@ -85,11 +108,11 @@
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
 
-                    <a href="https://www.instagram.com/" target="_blank">
+                    <a href="https://www.instagram.com/moraesfelippe/" target="_blank">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
 
-                    <a href="https://www.facebook.com" target="_blank">
+                    <a href="https://www.facebook.com/?locale=pt_BR" target="_blank">
                         <i class="fa-brands fa-facebook"></i>
                     </a>
                 </div>
@@ -212,11 +235,11 @@
                     <i class="fa-brands fa-whatsapp"></i>
                 </a>
 
-                <a href="https://www.instagram.com/" target="_blank">
+                <a href="https://www.instagram.com/moraesfelippe/" target="_blank">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
 
-                <a href="https://www.facebook.com" target="_blank">
+                <a href="https://www.facebook.com/?locale=pt_BR" target="_blank">
                     <i class="fa-brands fa-facebook"></i>
                 </a>
             </div>
@@ -224,5 +247,6 @@
     </footer>
 
     <script src="src/javascript/script.js"></script>
+    <script src="server.js"></script>
 </body>
 </html>
